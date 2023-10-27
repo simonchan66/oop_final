@@ -1,0 +1,103 @@
+@page "/allflight"
+@using Microsoft.Maui.Storage
+@using System.IO
+@using System.Text.Json
+@using BlazorHybridApp2.Data
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+</style>
+
+<h5>All Flights</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Flight Code</th>
+            <th>Airline</th>
+            <th>From</th>
+            <th>To</th>
+            <th>WeekDay</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flight in flights)
+        {
+            <tr>
+                <td>@flight.Code</td>
+                <td>@flight.AirlineCode</td>
+                <td>@flight.From</td>
+                <td>@flight.To</td>
+                <td>@flight.WeekDay</td>
+                <td>@flight.Time</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string from;
+    private string to;
+    private string day;
+    private string flight;
+    private string flight_code;
+    private string flight_time;
+    private string airline;
+    private string flight_day;
+    private string cost;
+    private string name;
+    private string citizenship;
+
+
+    private string csvPath = "./flights.csv";
+
+
+
+    List<Flight> flights;
+
+    protected override async Task OnInitializedAsync()
+    {
+        flights = await LoadFlightsFromCsvAsync(csvPath);
+    }
+
+    private async Task<List<Flight>> LoadFlightsFromCsvAsync(string filePath)
+    {
+        List<Flight> flights = new List<Flight>();
+
+        using (var reader = new StreamReader(csvPath))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+
+                flights.Add(new Flight(
+                  values[0],
+                  values[1],
+                  values[2],
+                  values[3],
+                  values[4],
+                  values[5],
+                  int.Parse(values[6]),
+                  decimal.Parse(values[7])
+                ));
+            }
+        }
+
+        return flights;
+
+    }
+
+}

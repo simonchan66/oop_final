@@ -1,0 +1,54 @@
+@page "/allreservations"
+@using Microsoft.Maui.Storage
+@using System.IO
+@using System.Text.Json
+@using BlazorHybridApp2.Data
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+</style>
+
+<h5>All Reservations</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Reservation Code</th>
+            <th>Flight Code</th>
+            <th>Name</th>
+            <th>Citizenship</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in reservations)
+        {
+            <tr>
+                <td>@reservation.Code</td>
+                <td>@reservation.Flight.Code</td>
+                <td>@reservation.Name</td>
+                <td>@reservation.Citizenship</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private ReservationManager reservationManager;
+    private IList<Reservation> reservations;
+
+    protected override void OnInitialized()
+    {
+        reservationManager = new ReservationManager();
+        reservations = reservationManager.Reservations ?? new List<Reservation>();
+    }
+}
