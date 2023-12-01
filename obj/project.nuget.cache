@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RRPqMOxKuI8P2U3rgR4CL+WAxB94eU8dCVszmjg+Vc2jfitiy/yxdq3H6hS5vq3E7yz9E9Vy2WAGcnqSEuPDGQ==",
+  "dgSpecHash": "EZjcV1ZHB//9VteKzp66k7nJHNse9z/hrvM34a/lqxIGQ6Xh+hKpVfinKdr8S2CXv6Be1SeTIseusqZs+ABATw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\BlazorHybridApp2.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\hostpitalapp2\\BlazorHybridApp2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.8\\microsoft.aspnetcore.authorization.6.0.8.nupkg.sha512",

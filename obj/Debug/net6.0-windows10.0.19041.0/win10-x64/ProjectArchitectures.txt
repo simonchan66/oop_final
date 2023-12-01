@@ -1,1 +1,1 @@
-C:\Users\user\source\repos\BlazorHybridApp2\BlazorHybridApp2.csproj;x64
+C:\Users\user\source\repos\hostpitalapp2\BlazorHybridApp2.csproj;x64

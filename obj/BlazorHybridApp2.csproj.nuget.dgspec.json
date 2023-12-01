@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\BlazorHybridApp2.csproj": {}
+    "C:\\Users\\user\\source\\repos\\hostpitalapp2\\BlazorHybridApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\BlazorHybridApp2.csproj": {
+    "C:\\Users\\user\\source\\repos\\hostpitalapp2\\BlazorHybridApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\BlazorHybridApp2.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\hostpitalapp2\\BlazorHybridApp2.csproj",
         "projectName": "BlazorHybridApp2",
-        "projectPath": "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\BlazorHybridApp2.csproj",
+        "projectPath": "C:\\Users\\user\\source\\repos\\hostpitalapp2\\BlazorHybridApp2.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\BlazorHybridApp2\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\hostpitalapp2\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

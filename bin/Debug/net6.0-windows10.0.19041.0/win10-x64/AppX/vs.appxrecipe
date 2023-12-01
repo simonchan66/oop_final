@@ -10,14 +10,14 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>0250BD30-5636-46B1-B742-00B065B43577</PackageIdentityName>
     <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>1F12AC549E7FBBDFA89441B7141CACDE208CB49D6122049C9E7279D334F816E2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0250BD30-5636-46B1-B742-00B065B43577_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0250BD30-5636-46B1-B742-00B065B43577_9zz4h110yvjzm!App</RegisteredUserModeAppID>
@@ -26,32 +26,32 @@
     <RegisteredVersion>1.0.0.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-10-27T03:09:47.204</Modified>
+      <Modified>2023-12-01T23:09:50.037</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-10-27T03:02:07.940</Modified>
+      <Modified>2023-12-01T23:09:49.825</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.runtimeconfig.json">
       <PackagePath>BlazorHybridApp2.runtimeconfig.json</PackagePath>
-      <Modified>2023-10-26T19:11:45.107</Modified>
+      <Modified>2023-12-01T23:07:46.664</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.dll">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.dll">
       <PackagePath>BlazorHybridApp2.dll</PackagePath>
-      <Modified>2023-10-27T03:02:06.236</Modified>
+      <Modified>2023-12-01T23:09:49.258</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BlazorHybridApp2.exe</PackagePath>
-      <Modified>2023-10-27T03:02:06.280</Modified>
+      <Modified>2023-12-01T23:09:49.265</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.deps.json">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BlazorHybridApp2.deps.json">
       <PackagePath>BlazorHybridApp2.deps.json</PackagePath>
-      <Modified>2023-10-26T20:10:37.968</Modified>
+      <Modified>2023-12-01T23:07:46.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.21\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1145,311 +1145,311 @@
       <PackagePath>Microsoft.Maui.pri</PackagePath>
       <Modified>2023-04-24T18:09:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\Resources\Raw\AboutAssets.txt">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2023-10-19T18:26:43.982</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BlazorHybridApp2.styles.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BlazorHybridApp2.styles.css">
       <PackagePath>wwwroot\BlazorHybridApp2.styles.css</PackagePath>
       <Modified>2023-10-26T19:09:00.299</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BlazorHybridApp2.bundle.scp.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BlazorHybridApp2.bundle.scp.css">
       <PackagePath>wwwroot\BlazorHybridApp2.bundle.scp.css</PackagePath>
       <Modified>2023-10-26T19:09:00.299</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\app.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
       <Modified>2023-10-19T18:26:43.819</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\bootstrap\bootstrap.min.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
       <Modified>2023-10-19T18:26:43.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\bootstrap\bootstrap.min.css.map">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
       <Modified>2023-10-19T18:26:43.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
       <PackagePath>wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css</PackagePath>
       <Modified>2023-10-19T18:26:43.830</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\fonts\open-iconic.eot">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\fonts\open-iconic.eot">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.eot</PackagePath>
       <Modified>2023-10-19T18:26:43.970</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\fonts\open-iconic.otf">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\fonts\open-iconic.otf">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.otf</PackagePath>
       <Modified>2023-10-19T18:26:43.972</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\fonts\open-iconic.svg">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\fonts\open-iconic.svg">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.svg</PackagePath>
       <Modified>2023-10-19T18:26:43.973</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.ttf</PackagePath>
       <Modified>2023-10-19T18:26:43.975</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\font\fonts\open-iconic.woff">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\font\fonts\open-iconic.woff">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.woff</PackagePath>
       <Modified>2023-10-19T18:26:43.976</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\FONT-LICENSE">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\FONT-LICENSE">
       <PackagePath>wwwroot\css\open-iconic\FONT-LICENSE</PackagePath>
       <Modified>2023-10-19T18:26:43.825</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\ICON-LICENSE">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\ICON-LICENSE">
       <PackagePath>wwwroot\css\open-iconic\ICON-LICENSE</PackagePath>
       <Modified>2023-10-19T18:26:43.826</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\css\open-iconic\README.md">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\css\open-iconic\README.md">
       <PackagePath>wwwroot\css\open-iconic\README.md</PackagePath>
       <Modified>2023-10-19T18:26:43.828</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\favicon.ico">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\favicon.ico">
       <PackagePath>wwwroot\favicon.ico</PackagePath>
       <Modified>2023-10-19T18:26:43.986</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\flights.csv">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\flights.csv">
       <PackagePath>wwwroot\flights.csv</PackagePath>
       <Modified>2023-10-26T04:05:45.888</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\wwwroot\index.html">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
       <Modified>2023-10-19T18:26:43.987</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:00.997</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.009</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.025</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.049</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.138</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
       <Modified>2023-10-19T18:26:43.981</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
       <Modified>2023-10-26T19:09:01.173</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.345</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.354</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.361</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.373</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.418</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
       <Modified>2023-10-26T19:09:01.222</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
       <Modified>2023-10-26T19:09:01.224</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
       <Modified>2023-10-26T19:09:01.234</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
       <Modified>2023-10-26T19:09:01.227</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
       <Modified>2023-10-26T19:09:01.229</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
       <Modified>2023-10-26T19:09:01.207</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
       <Modified>2023-10-26T19:09:01.209</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
       <Modified>2023-10-26T19:09:01.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
       <Modified>2023-10-26T19:09:01.211</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
       <Modified>2023-10-26T19:09:01.214</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.179</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.182</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.184</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.187</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.190</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
       <Modified>2023-10-26T19:09:01.193</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
       <Modified>2023-10-26T19:09:01.195</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
       <Modified>2023-10-26T19:09:01.205</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
       <Modified>2023-10-26T19:09:01.197</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
       <Modified>2023-10-26T19:09:01.199</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.268</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.271</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.276</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.282</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.294</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.250</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.252</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.255</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.258</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.264</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.237</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.241</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.244</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.248</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.297</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.302</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.308</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.317</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.339</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
       <Modified>2023-10-26T19:09:01.206</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
       <Modified>2023-10-26T19:09:01.214</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
       <Modified>2023-10-26T19:09:01.224</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
       <Modified>2023-10-26T19:09:01.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
       <Modified>2023-10-26T19:09:01.274</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\Shared\MainLayout.razor.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\Shared\MainLayout.razor.css">
       <PackagePath>Shared\MainLayout.razor.css</PackagePath>
       <Modified>2023-10-19T18:26:43.983</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\source\repos\BlazorHybridApp2\Shared\NavMenu.razor.css">
+    <AppxPackagedFile Include="C:\Users\user\source\repos\hostpitalapp2\Shared\NavMenu.razor.css">
       <PackagePath>Shared\NavMenu.razor.css</PackagePath>
       <Modified>2023-10-19T18:26:43.984</Modified>
     </AppxPackagedFile>
