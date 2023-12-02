@@ -26,6 +26,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Specialty</th>
@@ -36,6 +37,7 @@
         @foreach (var doctor in doctors)
         {
             <tr>
+                <td>@doctor.Id</td>
                 <td>@doctor.Name</td>
                 <td>@doctor.Gender</td>
                 <td>@doctor.Specialty</td>
@@ -77,6 +79,7 @@
                 {
                     doctors.Add(new Doctor
                         {
+                            Id = reader.GetInt32("id"),
                             Name = reader.GetString("name"),
                             Gender = reader.GetString("gender"),
                             Specialty = reader.GetString("specialty"),
