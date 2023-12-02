@@ -1,0 +1,81 @@
+@page "/add_new_doctor"
+@using MySqlConnector
+@using System.Threading.Tasks
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    .message {
+        color: red;
+    }
+</style>
+
+<h5>Add New Doctor</h5>
+
+<div>
+    <label>Name:</label>
+    <input placeholder="Enter name" @bind="name" />
+    <label>Gender:</label>
+    <input placeholder="Enter gender" @bind="gender" />
+    <label>Specialty:</label>
+    <input placeholder="Enter specialty" @bind="specialty" />
+    <label>Room:</label>
+    <input placeholder="Enter room" @bind="room" />
+
+    <button class="btn btn-primary" @onclick="AddDoctor">
+        Add Doctor
+    </button>
+</div>
+
+@if (isDoctorAdded)
+{
+    <div class="message">Successfully Added</div>
+}
+
+@code {
+    private string name;
+    private string gender;
+    private string specialty;
+    private string room;
+    private bool isDoctorAdded;
+
+    private async Task AddDoctor()
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "INSERT INTO doctors (name, gender, specialty, room) VALUES (@name, @gender, @specialty, @room)";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@gender", gender);
+                command.Parameters.AddWithValue("@specialty", specialty);
+                command.Parameters.AddWithValue("@room", room);
+
+                await command.ExecuteNonQueryAsync();
+                isDoctorAdded = true;
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@page "/add_new_patient"
+@using MySqlConnector
+@using System.Threading.Tasks
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    .message {
+        color: red;
+    }
+</style>
+
+<h5>Add New Patient</h5>
+
+<div>
+    <label>Name:</label>
+    <input placeholder="Enter name" @bind="name" />
+    <label>Gender:</label>
+    <input placeholder="Enter gender" @bind="gender" />
+    <label>Age:</label>
+    <input type="number" placeholder="Enter age" @bind="age" />
+    <label>Diagnosis:</label>
+    <input placeholder="Enter diagnosis" @bind="diagnosis" />
+    <label>Ward:</label>
+    <input placeholder="Enter ward" @bind="ward" />
+
+    <button class="btn btn-primary" @onclick="AddPatient">
+        Add Patient
+    </button>
+</div>
+
+@if (isPatientAdded)
+{
+    <div class="message">Successfully Added</div>
+}
+
+@code {
+    private string name;
+    private string gender;
+    private int age;
+    private string diagnosis;
+    private string ward;
+    private bool isPatientAdded;
+
+    private async Task AddPatient()
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "INSERT INTO patients (name, gender, age, diagnosis, ward) VALUES (@name, @gender, @age, @diagnosis, @ward)";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@gender", gender);
+                command.Parameters.AddWithValue("@age", age);
+                command.Parameters.AddWithValue("@diagnosis", diagnosis);
+                command.Parameters.AddWithValue("@ward", ward);
+
+                await command.ExecuteNonQueryAsync();
+                isPatientAdded = true;
+            }
+        }
+    }
+}

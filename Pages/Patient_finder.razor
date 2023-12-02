@@ -1,0 +1,142 @@
+@page "/patient_finder"
+@using BlazorHybridApp2.Data
+@using MySqlConnector
+@using System.Collections.Generic
+@using System.Threading.Tasks
+@using System.Text
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+</style>
+
+<h5>Patient Finder</h5>
+
+<div>
+    <label>Name:</label>
+    <input placeholder="Any" @bind="name" />
+    <label>Gender:</label>
+    <input placeholder="Any" @bind="gender" />
+    <label>Age:</label>
+    <input placeholder="Any" @bind="age" type="number" />
+    <label>Diagnosis:</label>
+    <input placeholder="Any" @bind="diagnosis" />
+    <label>Ward:</label>
+    <input placeholder="Any" @bind="ward" />
+
+    <button class="btn btn-primary" @onclick="FindPatients">
+        Find Patients
+    </button>
+</div>
+
+<h5>Patients</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Diagnosis</th>
+            <th>Ward</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in filteredPatients)
+        {
+            <tr>
+                <td>@patient.Name</td>
+                <td>@patient.Gender</td>
+                <td>@patient.Age</td>
+                <td>@patient.Diagnosis</td>
+                <td>@patient.Ward</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string name;
+    private string gender;
+    private int? age;
+    private string diagnosis;
+    private string ward;
+    private List<Patient> filteredPatients = new List<Patient>();
+
+    private async Task FindPatients()
+    {
+        filteredPatients = await LoadPatientsFromDatabaseAsync();
+    }
+
+    private async Task<List<Patient>> LoadPatientsFromDatabaseAsync()
+    {
+        var patients = new List<Patient>();
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var queryBuilder = new StringBuilder("SELECT * FROM patients WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(name))
+                queryBuilder.Append(" AND name LIKE @name");
+            if (!string.IsNullOrEmpty(gender))
+                queryBuilder.Append(" AND gender LIKE @gender");
+            if (age.HasValue)
+                queryBuilder.Append(" AND age = @age");
+            if (!string.IsNullOrEmpty(diagnosis))
+                queryBuilder.Append(" AND diagnosis LIKE @diagnosis");
+            if (!string.IsNullOrEmpty(ward))
+                queryBuilder.Append(" AND ward LIKE @ward");
+
+            var query = queryBuilder.ToString();
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                if (!string.IsNullOrEmpty(name))
+                    command.Parameters.AddWithValue("@name", $"%{name}%");
+                if (!string.IsNullOrEmpty(gender))
+                    command.Parameters.AddWithValue("@gender", $"%{gender}%");
+                if (age.HasValue)
+                    command.Parameters.AddWithValue("@age", age.Value);
+                if (!string.IsNullOrEmpty(diagnosis))
+                    command.Parameters.AddWithValue("@diagnosis", $"%{diagnosis}%");
+                if (!string.IsNullOrEmpty(ward))
+                    command.Parameters.AddWithValue("@ward", $"%{ward}%");
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        patients.Add(new Patient
+                            {
+                                Name = reader.GetString("name"),
+                                Gender = reader.GetString("gender"),
+                                Age = reader.GetInt32("age"),
+                                Diagnosis = reader.GetString("diagnosis"),
+                                Ward = reader.GetString("ward")
+                            });
+                    }
+                }
+            }
+        }
+
+        return patients;
+    }
+}
