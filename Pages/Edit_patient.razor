@@ -1,0 +1,164 @@
+@page "/edit_patient/{id}"
+@using BlazorHybridApp2.Data
+@using MySqlConnector
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    label {
+        width: 100px;
+        margin-right: 10px;
+        text-align: right;
+    }
+
+    input, select {
+        flex: 1;
+    }
+
+    .message {
+        color: red;
+    }
+</style>
+<h3>Edit Patient</h3>
+
+@if (patient == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="form-container">
+
+        <div class="form-group">
+            <label>ID:</label>
+            <input value="@patient.Id" disabled />
+        </div>
+
+        <div class="form-group">
+            <label>Name:</label>
+            <input @bind="@patient.Name" />
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <select @bind="@patient.Gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Age:</label>
+            <input @bind="@patient.Age" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label>Diagnosis:</label>
+            <input @bind="@patient.Diagnosis" />
+        </div>
+
+        <div class="form-group">
+            <label>Ward:</label>
+            <input @bind="@patient.Ward" />
+        </div>
+
+        <button class="btn btn-primary" @onclick="SavePatient">Save Patient</button>
+
+    </div>
+
+    @if (isUpdated)
+    {
+        <div class="message">Successfully Edited</div>
+    }
+}
+
+@code {
+    private Patient patient;
+    private bool isUpdated = false;
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPatientFromDatabaseAsync(Id);
+    }
+
+    private async Task LoadPatientFromDatabaseAsync(string id)
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "SELECT * FROM patients WHERE id = @id";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        patient = new Patient
+                            {
+                                Id = reader.GetInt32("id"),
+                                Name = reader.GetString("name"),
+                                Gender = reader.GetString("gender"),
+                                Age = reader.GetInt32("age"),
+                                Diagnosis = reader.GetString("diagnosis"),
+                                Ward = reader.GetString("ward")
+                            };
+                    }
+                }
+            }
+        }
+    }
+
+    private async Task SavePatient()
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "UPDATE patients SET name = @name, gender = @gender, age = @age, diagnosis = @diagnosis, ward = @ward WHERE id = @id";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", patient.Name);
+                command.Parameters.AddWithValue("@gender", patient.Gender);
+                command.Parameters.AddWithValue("@age", patient.Age);
+                command.Parameters.AddWithValue("@diagnosis", patient.Diagnosis);
+                command.Parameters.AddWithValue("@ward", patient.Ward);
+                command.Parameters.AddWithValue("@id", patient.Id);
+
+                await command.ExecuteNonQueryAsync();
+
+                isUpdated = true;
+            }
+        }
+    }
+}

@@ -4,6 +4,8 @@
 @using System.Collections.Generic
 @using System.Threading.Tasks
 @using System.Text
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavManager
 
 <style>
     label {
@@ -23,6 +25,8 @@
 <h5>Patient Finder</h5>
 
 <div>
+    <label>ID:</label>
+    <input placeholder="Any" @bind="id" />
     <label>Name:</label>
     <input placeholder="Any" @bind="name" />
     <label>Gender:</label>
@@ -43,34 +47,46 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Age</th>
             <th>Diagnosis</th>
             <th>Ward</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var patient in filteredPatients)
         {
             <tr>
+                <td>@patient.Id</td>
                 <td>@patient.Name</td>
                 <td>@patient.Gender</td>
                 <td>@patient.Age</td>
                 <td>@patient.Diagnosis</td>
                 <td>@patient.Ward</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => EditPatient(patient.Id)">Edit</button>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
 @code {
+    private int? id;
     private string name;
     private string gender;
     private int? age;
     private string diagnosis;
     private string ward;
     private List<Patient> filteredPatients = new List<Patient>();
+
+    private void EditPatient(int id)
+    {
+        NavManager.NavigateTo($"/edit_patient/{id}");
+    }
 
     private async Task FindPatients()
     {
@@ -94,6 +110,8 @@
 
             var queryBuilder = new StringBuilder("SELECT * FROM patients WHERE 1=1");
 
+            if (id.HasValue)
+                queryBuilder.Append(" AND id = @id");
             if (!string.IsNullOrEmpty(name))
                 queryBuilder.Append(" AND name LIKE @name");
             if (!string.IsNullOrEmpty(gender))
@@ -109,6 +127,8 @@
 
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
+                if (id.HasValue)
+                    command.Parameters.AddWithValue("@id", id.Value);
                 if (!string.IsNullOrEmpty(name))
                     command.Parameters.AddWithValue("@name", $"%{name}%");
                 if (!string.IsNullOrEmpty(gender))
@@ -126,6 +146,7 @@
                     {
                         patients.Add(new Patient
                             {
+                                Id = reader.GetInt32("id"),
                                 Name = reader.GetString("name"),
                                 Gender = reader.GetString("gender"),
                                 Age = reader.GetInt32("age"),

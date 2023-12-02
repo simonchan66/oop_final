@@ -4,6 +4,8 @@
 @using System.Collections.Generic
 @using System.Threading.Tasks
 @using System.Text
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavManager
 
 <style>
     label {
@@ -23,6 +25,8 @@
 <h5>Doctor Finder</h5>
 
 <div>
+    <label>ID:</label>
+    <input placeholder="Any" @bind="id" />
     <label>Name:</label>
     <input placeholder="Any" @bind="name" />
     <label>Gender:</label>
@@ -41,32 +45,43 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Specialty</th>
             <th>Room</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var doctor in filteredDoctors)
         {
             <tr>
+                <td>@doctor.Id</td>
                 <td>@doctor.Name</td>
                 <td>@doctor.Gender</td>
                 <td>@doctor.Specialty</td>
                 <td>@doctor.Room</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => EditDoctor(doctor.Id)">Edit</button>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
 @code {
+    private int? id;
     private string name;
     private string gender;
     private string specialty;
     private string room;
     private List<Doctor> filteredDoctors = new List<Doctor>();
 
+    private void EditDoctor(int id)
+    {
+        NavManager.NavigateTo($"/edit_doctor/{id}");
+    }
     private async Task FindDoctors()
     {
         filteredDoctors = await LoadDoctorsFromDatabaseAsync();
@@ -89,6 +104,8 @@
 
             var queryBuilder = new StringBuilder("SELECT * FROM doctors WHERE 1=1");
 
+            if (id.HasValue)
+                queryBuilder.Append(" AND id = @id");
             if (!string.IsNullOrEmpty(name))
                 queryBuilder.Append(" AND name LIKE @name");
             if (!string.IsNullOrEmpty(gender))
@@ -102,6 +119,8 @@
 
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
+                if (id.HasValue)
+                    command.Parameters.AddWithValue("@id", id.Value);
                 if (!string.IsNullOrEmpty(name))
                     command.Parameters.AddWithValue("@name", $"%{name}%");
                 if (!string.IsNullOrEmpty(gender))
@@ -117,6 +136,7 @@
                     {
                         doctors.Add(new Doctor
                             {
+                                Id = reader.GetInt32("id"),
                                 Name = reader.GetString("name"),
                                 Gender = reader.GetString("gender"),
                                 Specialty = reader.GetString("specialty"),

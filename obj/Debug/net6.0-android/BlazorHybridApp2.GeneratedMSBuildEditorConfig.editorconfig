@@ -58,31 +58,10 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsZG9jdG9ycy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/hostpitalapp2/Pages/Allflight.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsZmxpZ2h0LnJhem9y
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/source/repos/hostpitalapp2/Pages/Allpatients.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxscGF0aWVudHMucmF6b3I=
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/hostpitalapp2/Pages/Allreservations.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxscmVzZXJ2YXRpb25zLnJhem9y
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/hostpitalapp2/Pages/Counter.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -93,17 +72,17 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yX2ZpbmRlci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/hostpitalapp2/Pages/FetchData.razor]
+[C:/Users/user/source/repos/hostpitalapp2/Pages/Edit_doctor - Copy.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdF9kb2N0b3IgLSBDb3B5LnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/hostpitalapp2/Pages/Flightpage.razor]
+[C:/Users/user/source/repos/hostpitalapp2/Pages/Edit_patient.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxpZ2h0cGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdF9wYXRpZW50LnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

@@ -1,0 +1,180 @@
+@page "/edit_doctor/{id}"
+@using BlazorHybridApp2.Data
+@using MySqlConnector
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    label {
+        width: 100px;
+        margin-right: 10px;
+        text-align: right;
+    }
+
+    input {
+        flex: 1;
+    }
+
+    .message {
+        color: red;
+    }
+</style>
+<h3>Edit Doctor</h3>
+
+@if (doctor == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="form-container">
+
+        <div class="form-group">
+            <label>ID:</label>
+            <input value="@doctor.Id" disabled />
+        </div>
+
+        <div class="form-group">
+            <label>Name:</label>
+            <input @bind="@doctor.Name" />
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <select @bind="@doctor.Gender" >
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Specialty:</label>
+            <select @bind="@doctor.Specialty">
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Radiology">Radiology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Gastroenterology">Gastroenterology</option>
+                <option value="Obstetrics">Obstetrics</option>
+                <option value="Oncology">Oncology</option>
+                <option value="Endocrinology">Endocrinology</option>
+                <option value="Rheumatology">Rheumatology</option>
+                <option value="Allergy and Immunology">Allergy and Immunology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Family Medicine">Family Medicine</option>
+                <option value="Infectious Disease">Infectious Disease</option>
+                <option value="Internal Medicine">Internal Medicine</option>
+                <option value="Nephrology">Nephrology</option>
+                <option value="Ophthalmology">Ophthalmology</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Room:</label>
+            <input @bind="@doctor.Room" />
+        </div>
+
+        <button class="btn btn-primary" @onclick="SaveDoctor">Save Doctor</button>
+
+    </div>
+
+    @if (isUpdated)
+    {
+        <div class="message">Successfully Edited</div>
+    }
+
+
+
+@code {
+    private Doctor doctor;
+    private bool isUpdated = false;
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadDoctorFromDatabaseAsync(Id);
+    }
+
+    private async Task LoadDoctorFromDatabaseAsync(string id)
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "SELECT * FROM doctors WHERE id = @id";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        doctor = new Doctor
+                            {
+                                Id = reader.GetInt32("id"),
+                                Name = reader.GetString("name"),
+                                Gender = reader.GetString("gender"),
+                                Specialty = reader.GetString("specialty"),
+                                Room = reader.GetString("room")
+                            };
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    private async Task SaveDoctor()
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "UPDATE doctors SET name = @name, gender = @gender, specialty = @specialty, room = @room WHERE id = @id";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", doctor.Name);
+                command.Parameters.AddWithValue("@gender", doctor.Gender);
+                command.Parameters.AddWithValue("@specialty", doctor.Specialty);
+                command.Parameters.AddWithValue("@room", doctor.Room);
+                command.Parameters.AddWithValue("@id", doctor.Id);
+
+                await command.ExecuteNonQueryAsync();
+
+                isUpdated = true;
+            }
+        }
+    }
+}
+}
