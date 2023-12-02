@@ -1,0 +1,132 @@
+@page "/doctor_finder"
+@using BlazorHybridApp2.Data
+@using MySqlConnector
+@using System.Collections.Generic
+@using System.Threading.Tasks
+@using System.Text
+
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+</style>
+
+<h5>Doctor Finder</h5>
+
+<div>
+    <label>Name:</label>
+    <input placeholder="Any" @bind="name" />
+    <label>Gender:</label>
+    <input placeholder="Any" @bind="gender" />
+    <label>Specialty:</label>
+    <input placeholder="Any" @bind="specialty" />
+    <label>Room:</label>
+    <input placeholder="Any" @bind="room" />
+
+    <button class="btn btn-primary" @onclick="FindDoctors">
+        Find Doctors
+    </button>
+</div>
+
+<h5>Doctors</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Specialty</th>
+            <th>Room</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in filteredDoctors)
+        {
+            <tr>
+                <td>@doctor.Name</td>
+                <td>@doctor.Gender</td>
+                <td>@doctor.Specialty</td>
+                <td>@doctor.Room</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string name;
+    private string gender;
+    private string specialty;
+    private string room;
+    private List<Doctor> filteredDoctors = new List<Doctor>();
+
+    private async Task FindDoctors()
+    {
+        filteredDoctors = await LoadDoctorsFromDatabaseAsync();
+    }
+
+    private async Task<List<Doctor>> LoadDoctorsFromDatabaseAsync()
+    {
+        var doctors = new List<Doctor>();
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var queryBuilder = new StringBuilder("SELECT * FROM doctors WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(name))
+                queryBuilder.Append(" AND name LIKE @name");
+            if (!string.IsNullOrEmpty(gender))
+                queryBuilder.Append(" AND gender LIKE @gender");
+            if (!string.IsNullOrEmpty(specialty))
+                queryBuilder.Append(" AND specialty LIKE @specialty");
+            if (!string.IsNullOrEmpty(room))
+                queryBuilder.Append(" AND room LIKE @room");
+
+            var query = queryBuilder.ToString();
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                if (!string.IsNullOrEmpty(name))
+                    command.Parameters.AddWithValue("@name", $"%{name}%");
+                if (!string.IsNullOrEmpty(gender))
+                    command.Parameters.AddWithValue("@gender", $"%{gender}%");
+                if (!string.IsNullOrEmpty(specialty))
+                    command.Parameters.AddWithValue("@specialty", $"%{specialty}%");
+                if (!string.IsNullOrEmpty(room))
+                    command.Parameters.AddWithValue("@room", $"%{room}%");
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        doctors.Add(new Doctor
+                            {
+                                Name = reader.GetString("name"),
+                                Gender = reader.GetString("gender"),
+                                Specialty = reader.GetString("specialty"),
+                                Room = reader.GetString("room")
+                            });
+                    }
+                }
+            }
+        }
+
+        return doctors;
+    }
+}
