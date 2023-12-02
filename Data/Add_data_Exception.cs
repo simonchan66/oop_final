@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BlazorHybridApp2.Data
 {
-    public class MakeReservationException : Exception
+    public class Add_data_Exception : Exception
     {
-        public MakeReservationException()
-          : base("Unable to make reservation.")
+        public Add_data_Exception()
+          : base("Unable to add data")
         {
         }
 
-        public MakeReservationException(string message)
+        public Add_data_Exception(string message)
           : base(message)
         {
         }

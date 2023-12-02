@@ -31,7 +31,7 @@
 
 @if (patient == null)
 {
-    <p><em>Loading...</em></p>
+    <div class="message">Successfully Deleted</div>
 }
 else
 {
@@ -71,6 +71,7 @@ else
         </div>
 
         <button class="btn btn-primary" @onclick="SavePatient">Save Patient</button>
+        <button class="btn btn-danger" @onclick="DeletePatient">Delete Patient</button>
 
     </div>
 
@@ -158,6 +159,33 @@ else
                 await command.ExecuteNonQueryAsync();
 
                 isUpdated = true;
+            }
+        }
+    }
+
+    private async Task DeletePatient()
+    {
+        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+            {
+                Server = "localhost",
+                UserID = "root",
+                Password = "123123",
+                Database = "hospitaldb",
+            };
+
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "DELETE FROM patients WHERE id = @id";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@id", patient.Id);
+
+                await command.ExecuteNonQueryAsync();
+
+                patient = null;
             }
         }
     }

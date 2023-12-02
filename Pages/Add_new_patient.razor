@@ -1,6 +1,7 @@
 @page "/add_new_patient"
 @using MySqlConnector
 @using System.Threading.Tasks
+@using BlazorHybridApp2.Data
 
 <style>
     label {
@@ -27,59 +28,109 @@
     <label>Name:</label>
     <input placeholder="Enter name" @bind="name" />
     <label>Gender:</label>
-    <input placeholder="Enter gender" @bind="gender" />
+    <select @bind="gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
     <label>Age:</label>
     <input type="number" placeholder="Enter age" @bind="age" />
     <label>Diagnosis:</label>
     <input placeholder="Enter diagnosis" @bind="diagnosis" />
     <label>Ward:</label>
-    <input placeholder="Enter ward" @bind="ward" />
+    <select @bind="ward">
+        <option value="General ward">General ward</option>
+        <option value="Private ward">Private ward</option>
+        <option value="Intensive Care Unit (ICU)">Intensive Care Unit (ICU)</option>
+        <option value="Cardiac Care Unit (CCU)">Cardiac Care Unit (CCU)</option>
+        <option value="Neonatal Intensive Care Unit (NICU)">Neonatal Intensive Care Unit (NICU)</option>
+        <option value="Pediatric ward">Pediatric ward</option>
+        <option value="Oncology">Oncology</option>
+        <option value="Oncology ward">Oncology ward</option>
+        <option value="Orthopedic ward">Orthopedic ward</option>
+        <option value="Psychiatric ward">Psychiatric ward</option>
+        <option value="Isolation ward">Isolation ward</option>
+        <option value="Geriatric ward">Geriatric ward</option>
+    </select>
 
     <button class="btn btn-primary" @onclick="AddPatient">
         Add Patient
     </button>
 </div>
-
-@if (isPatientAdded)
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="message">@errorMessage</div>
+}
+else if (isPatientAdded)
 {
     <div class="message">Successfully Added</div>
 }
 
 @code {
     private string name;
-    private string gender;
-    private int age;
+    private string gender = "M";
+    private int age = 0;
     private string diagnosis;
-    private string ward;
+    private string ward = "General ward";
     private bool isPatientAdded;
-
+    private string errorMessage;
     private async Task AddPatient()
     {
-        MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
-            {
-                Server = "localhost",
-                UserID = "root",
-                Password = "123123",
-                Database = "hospitaldb",
-            };
-
-        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        try
         {
-            await connection.OpenAsync();
-
-            var query = "INSERT INTO patients (name, gender, age, diagnosis, ward) VALUES (@name, @gender, @age, @diagnosis, @ward)";
-
-            using (MySqlCommand command = new MySqlCommand(query, connection))
+            // Check if name is empty
+            if (string.IsNullOrEmpty(name))
             {
-                command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@gender", gender);
-                command.Parameters.AddWithValue("@age", age);
-                command.Parameters.AddWithValue("@diagnosis", diagnosis);
-                command.Parameters.AddWithValue("@ward", ward);
-
-                await command.ExecuteNonQueryAsync();
-                isPatientAdded = true;
+                throw new Add_data_Exception("Name cannot be empty.");
             }
+
+            // Check if diagnosis is empty
+            if (string.IsNullOrEmpty(diagnosis))
+            {
+                throw new Add_data_Exception("Diagnosis cannot be empty.");
+            }
+
+            // Check if name contains numbers
+            if (System.Text.RegularExpressions.Regex.IsMatch(name, @"\d"))
+            {
+                throw new Add_data_Exception("Name should not contain numbers.");
+            }
+
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+                {
+                    Server = "localhost",
+                    UserID = "root",
+                    Password = "123123",
+                    Database = "hospitaldb",
+                };
+
+            using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+            {
+                await connection.OpenAsync();
+
+                // Add age and ward fields to the query
+                var query = "INSERT INTO patients (name, gender, age, diagnosis, ward) VALUES (@name, @gender, @age, @diagnosis, @ward)";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@gender", gender);
+                    command.Parameters.AddWithValue("@age", age);  // Add age parameter
+                    command.Parameters.AddWithValue("@diagnosis", diagnosis);
+                    command.Parameters.AddWithValue("@ward", ward);  // Add ward parameter
+
+                    await command.ExecuteNonQueryAsync();
+                    isPatientAdded = true;
+                    errorMessage = string.Empty;
+                }
+            }
+        }
+        catch (Add_data_Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        catch (Exception ex) // Catch all other exceptions
+        {
+            errorMessage = "An unexpected error occurred: " + ex.Message;
         }
     }
 }
