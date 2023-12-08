@@ -107,16 +107,16 @@ else if (isPatientAdded)
             {
                 await connection.OpenAsync();
 
-                // Add age and ward fields to the query
+             
                 var query = "INSERT INTO patients (name, gender, age, diagnosis, ward) VALUES (@name, @gender, @age, @diagnosis, @ward)";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@gender", gender);
-                    command.Parameters.AddWithValue("@age", age);  // Add age parameter
+                    command.Parameters.AddWithValue("@age", age); 
                     command.Parameters.AddWithValue("@diagnosis", diagnosis);
-                    command.Parameters.AddWithValue("@ward", ward);  // Add ward parameter
+                    command.Parameters.AddWithValue("@ward", ward); 
 
                     await command.ExecuteNonQueryAsync();
                     isPatientAdded = true;
